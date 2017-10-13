@@ -1,0 +1,12 @@
+# server
+cra-server-ex.graffle
+node_modules
+npm-debug.log
+
+# client
+client/node_modules
+client/coverage
+client/.DS_Store
+client/.env
+client/npm-debug.log
+client/debug.log
