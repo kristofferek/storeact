@@ -58,32 +58,36 @@ body {
 
 .main-container {
 	margin: 5.4rem 0 0 12vw !important;
-	padding: 2em 2em !important;
+	padding: 2em 2em 2em 0 !important;
 	width: 88vw !important;
 	position: absolute;
 }
 
-.grid .column {
+#grid-view .column {
 	padding: 0.5em !important
 }
 
-.grid .item-brand {
+#grid-view .item-brand {
 	font-weight: 400 !important;
 	padding: 0 !important;
 }
 
-.grid .item-brand, .grid .item-name {
+#grid-view .item-brand, #grid-view .item-name {
 	line-height: 1.1em;
 }
 
-.grid .item-name {
+#grid-view .item-name {
 	color: #454545 !important;
 	font-size: 70%;
 }
 
-.grid .item-price {
+#grid-view .item-price {
 	font-weight: 400 !important;
 	font-size: 80%;
+}
+
+#details {
+	margin: 0 !important;
 }
 
 @media screen and (max-width: 767px) {

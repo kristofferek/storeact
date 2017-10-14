@@ -11,8 +11,17 @@ class ItemView extends React.Component {
 
 	render() {
 		return (
-			<div className="">
-				{this.state.item.name}
+			<div id="details" className="ui grid stackable">
+				<div className="ten wide column">
+					<img className="fluid image ui" alt="img" src={this.state.item.imgUrl} />
+				</div>
+				<div className="six wide column">
+					<div className="">
+						<div className="header large" >
+							{this.state.item.name}
+						</div>  
+					</div>
+				</div>
 			</div>
 			);
 	}

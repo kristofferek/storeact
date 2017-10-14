@@ -16,7 +16,7 @@ class GridView extends React.Component {
 			);
 
 		return (
-			<div className="four column doubling stackable ui grid">
+			<div id="grid-view" className="four column doubling stackable ui grid">
 				{gridItems}
 			</div>
 			);
