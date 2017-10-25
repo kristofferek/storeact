@@ -10,3 +10,6 @@ client/.DS_Store
 client/.env
 client/npm-debug.log
 client/debug.log
+
+# db
+db/data
