@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 class TopMenu extends React.Component {
 	render() {
@@ -11,10 +12,7 @@ class TopMenu extends React.Component {
 	      </Link>
 	      <div className="right menu">
 	        <div className="right item">
-	          <div className="ui icon input">
-	            <input type="text" placeholder="Search..."/>
-	            <i className="search link icon"></i>
-	          </div>
+	          <Search/>
 	        </div>
 	        <div className="item">
 	        	<i className="shop icon black large"></i>

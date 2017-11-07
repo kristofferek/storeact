@@ -21,13 +21,29 @@ app.get('/api/items/:category', function(req, res) {
 	let cat = req.params.category;
 	let q = {category: cat};
 	if (cat === "all") { q = {};}
-    db.collection("items").find(q).toArray(function(err, docs) {  
+    db.collection("items").find(q).toArray(function(err, docs) {
+      res.json(docs);
+    });
+});
+
+app.get('/api/search/:term', function(req, res) {
+	let term = req.params.term;
+  //Get all items where it's category or name contains search term.
+	let q = {
+    $or: [
+      {category: {'$regex' : term, '$options' : 'i'}},
+      {name: {'$regex' : term, '$options' : 'i'}},
+      {brand: {'$regex' : term, '$options' : 'i'}}
+    ]
+  };
+	if (term === "all") { q = {};}
+    db.collection("items").find(q).toArray(function(err, docs) {
       res.json(docs);
     });
 });
 
 app.get('/api/item/:id', function(req, res) {
-    db.collection("items").find({_id: ObjectId(req.params.id)}).limit(1).next(function(err, docs) {  
+    db.collection("items").find({_id: ObjectId(req.params.id)}).limit(1).next(function(err, docs) {
       res.json(docs);
     });
 });
@@ -39,4 +55,3 @@ MongoClient.connect('mongodb://localhost/storeact', function(err, dbConnection) 
     console.log(`Find the server at: http://localhost:${app.get("port")}/`); // eslint-disable-line no-console
   });
 });
-
