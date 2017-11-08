@@ -31,7 +31,7 @@ class Search extends React.Component {
     }
 
     return (
-      <div className="ui icon input">
+      <div className="ui icon input searchbox">
         <input type="text" value={this.state.term} placeholder="Search..." onKeyPress={this.handleKeyPress} onChange={this.handleChange}/>
         <i className="search link icon" onClick={() => {this.setState({doNewSearch: true})}}/>
         {redirect}

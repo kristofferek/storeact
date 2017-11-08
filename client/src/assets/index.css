@@ -20,7 +20,7 @@ body {
 
 .topmenu a.header{
 	padding-bottom: 0em !important;
-	padding-top: 0.2em !important
+	padding-top: 0.2em !important;
 }
 
 .topmenu .brand {
@@ -123,5 +123,9 @@ body {
 @media screen and (max-width: 767px) {
     .main-container {
         margin-top: 11% !important;
+    }
+
+    .topmenu .searchbox {
+      width: 100px !important;
     }
 }
