@@ -25,7 +25,11 @@ body {
 
 .topmenu .brand {
 	font-size:calc(45px + 1.3vw);
+}
 
+.topmenu .cartBtn {
+  padding-left: 0 !important;
+  margin-right: 0.5em !important;
 }
 
 .sidemenu {

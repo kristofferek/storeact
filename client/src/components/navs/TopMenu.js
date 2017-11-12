@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import CartButton from './CartButton';
 
 class TopMenu extends React.Component {
 	render() {
@@ -14,9 +15,7 @@ class TopMenu extends React.Component {
 	        <div className="right item">
 	          <Search/>
 	        </div>
-	        <div className="item">
-	        	<i className="shop icon black large"></i>
-	        </div>
+	        <CartButton />
 	      </div>
 	    </div>
 	  );

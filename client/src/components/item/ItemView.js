@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import Cart from '../../utils/Cart';
 let $ = require('jquery');
 
 function capitalizeFirstLetter(string) {
@@ -15,6 +16,7 @@ class ItemView extends React.Component {
 		this.state = {id: this.props.match.params.id, item: [], selectedSize: ''};
 		this.loadData = this.loadData.bind(this);
 		this.sizeClick = this.sizeClick.bind(this);
+		this.addItemToCart = this.addItemToCart.bind(this);
 	}
 
 	render() {
@@ -46,7 +48,7 @@ class ItemView extends React.Component {
 							<div className="ui buttons fluid size-buttons">
 								{sizeBtns}
 							</div>
-							<button className="cart-button ui fluid labeled icon button green">
+							<button className="cart-button ui fluid labeled icon button green" onClick={this.addItemToCart}>
 								<i className="shop icon"></i>
 								Add to cart
 							</button>
@@ -86,6 +88,12 @@ class ItemView extends React.Component {
 	sizeClick(size){
 		this.setState({selectedSize: size});
 	}
+
+	addItemToCart(){
+		let cart = new Cart();
+		cart.addCartItem(this.state.item)
+	}
+
 }
 
 export default ItemView;
