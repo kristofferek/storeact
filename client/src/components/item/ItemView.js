@@ -17,6 +17,7 @@ class ItemView extends React.Component {
 		this.loadData = this.loadData.bind(this);
 		this.sizeClick = this.sizeClick.bind(this);
 		this.addItemToCart = this.addItemToCart.bind(this);
+		this.cart = new Cart();
 	}
 
 	render() {
@@ -90,8 +91,7 @@ class ItemView extends React.Component {
 	}
 
 	addItemToCart(){
-		let cart = new Cart();
-		cart.addCartItem(this.state.item)
+		this.cart.addCartItem(this.state.item, this.state.selectedSize)
 	}
 
 }

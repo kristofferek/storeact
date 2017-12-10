@@ -6,9 +6,7 @@ import ItemView from './item/ItemView';
 import Home from './Home';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-
 class MainContainer extends React.Component {
-
 	render() {
 	  return (
 	    <div className="main-container">

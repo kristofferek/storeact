@@ -16,6 +16,7 @@ body {
 .topmenu {
 	background-color: #fff !important;
 	max-height: 80px;
+  z-index: 103 !important;
 }
 
 .topmenu a.header{
@@ -30,6 +31,10 @@ body {
 .topmenu .cartBtn {
   padding-left: 0 !important;
   margin-right: 0.5em !important;
+}
+
+.searchbox {
+  min-width: 130px
 }
 
 .sidemenu {
@@ -124,12 +129,34 @@ body {
 	margin-top: 0.5em !important;
 }
 
+#cart-wrapper {
+  align-items: center;
+  align-self: center;
+}
+
+.cart-items{
+  margin-top: 10px;
+  border: 2px solid #ccc;
+}
+
+.ReactModal__Overlay{
+  z-index: 102 !important;
+}
+
 @media screen and (max-width: 767px) {
     .main-container {
-        margin-top: 11% !important;
+      margin-top: 11% !important;
     }
 
     .topmenu .searchbox {
       width: 100px !important;
+    }
+
+    .ReactModal__Content{
+      left:20% !important;
+      bottom: 0 !important;
+      padding: 15px !important;
+      top: 75px !important;
+      right: 5px !important;
     }
 }

@@ -2,24 +2,29 @@
 let instance = null;
 
 class Cart {
+  cart = [];
+  observers = [];
+
   constructor() {
     if(!instance){
           instance = this;
+          this.cart = {itemData: [], itemSizes: [], size: 0};
     }
     return instance;
   }
 
-  items = [];
-  selectedSize = [];
-  observers = [];
-
-  addCartItem(item) {
-    this.items.push(item);
+  addCartItem(item, size) {
+    if (!this.cart.itemSizes[item._id]) {
+      this.cart.itemData.push(item)
+      this.cart.itemSizes[item._id] = []
+    }
+    this.cart.itemSizes[item._id].push(size)
+    this.cart.size++;
     this.notifyObeservers();
   }
 
   getCartItems() {
-    return this.items;
+    return this.cart;
   }
 
   addObserver(funcToCall) {
@@ -28,7 +33,7 @@ class Cart {
 
   notifyObeservers() {
     for(var func of this.observers) {
-      func(this.items);
+      func(this.cart);
     }
   }
 }

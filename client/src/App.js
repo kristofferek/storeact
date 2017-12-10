@@ -16,7 +16,8 @@ class NoMatch extends Component {
   }
 }
 
-class AppWrapper extends Component {  
+class AppWrapper extends Component {
+
   render() {
     return (
       <div>
